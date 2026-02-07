@@ -1,2 +1,13 @@
+sample-website-design-for-beginners
+
 # sample-website-design-for-beginners.
-A begineer-friendly responsive website template built using HTML, CSS, and JS
+## 🌐 Live Demo
+https://suspect-911.github.io/sample-website-design-for-beginners/
+
+## 🚀 Features
+- Responsive design
+- Beginner friendly
+- Clean UI
+
+## 🛠️ Tech Stack
+HTML, CSS, JavaScript
