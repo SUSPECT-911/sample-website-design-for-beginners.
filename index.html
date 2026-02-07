@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sample</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- FIXED BACKGROUND -->
+  <div class="page-bg"></div>
+
+  <!-- BLUR OVERLAY -->
+  <div class="blur-overlay" id="blurOverlay"></div>
+
+  <!-- NAVBAR (NEVER BLURRED) -->
+  <header class="navbar">
+    <div class="logo">YOUR LOGO/NAME</div>
+
+    <div class="nav-page" id="navText">Home</div>
+
+    <div class="nav-actions">
+      <button class="nav-btn login">Login</button>
+      <button class="nav-btn signup">Sign Up</button>
+
+      <div class="menu-container">
+        <div class="hamburger" id="menuBtn">
+          <span></span><span></span><span></span>
+        </div>
+
+        <div class="menu-list" id="menuList">
+          <button onclick="setPage('Home')">Home</button>
+          <button onclick="setPage('About')">About</button>
+          <button onclick="setPage('Services')">Services</button>
+          <button onclick="setPage('Works')">Works</button>
+          <button onclick="setPage('Contact')">Contact</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="main-content">
+    <section class="hero">
+      <p class="subtitle">Beginners</p>
+      <h1 id="mainText">Responsive Website<br>Template</h1>
+    </section>
+
+    <div style="height:1500px"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

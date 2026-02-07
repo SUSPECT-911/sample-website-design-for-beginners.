@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: white;
+  overflow-x: hidden;
+}
+
+/* ================= BACKGROUND ================= */
+.page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+
+  background-image:
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("photo-1601425276965-bdb69f1f3977.avif");
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  transform: scale(1.12);          /* 🔥 prevents shrink */
+  will-change: transform;
+}
+
+/* ================= BLUR OVERLAY ================= */
+.blur-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  background: rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.blur-overlay.show {
+  opacity: 1;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-page {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 3px;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* ================= NAV ACTIONS ================= */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.nav-btn.signup {
+  border: 1px solid #1ed760;
+  padding: 6px 12px;
+  color: #1ed760;
+}
+
+.nav-btn.signup:hover {
+  background: #1ed760;
+  color: black;
+}
+
+/* ================= CONTENT ================= */
+.main-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 140px;
+  min-height: 100vh;
+}
+/* BLUR CONTENT WHEN MENU OPEN */
+.main-content.blur {
+  filter: blur(8px);
+  transition: filter 0.3s ease;
+}
+
+.hero {
+  padding: 180px 100px;
+}
+
+.subtitle {
+  color: #aaa;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+/* ================= MENU ================= */
+.menu-container {
+  position: relative;
+}
+
+.hamburger {
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+.menu-list {
+  position: absolute;
+  top: 45px;
+  right: -18px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 10;
+}
+
+.menu-list button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  text-align: right;
+}
+
+.menu-list button:hover {
+  color: #1ed760;
+}
+
+.menu-list.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .nav-page {
+    display: none;
+  }
+}
